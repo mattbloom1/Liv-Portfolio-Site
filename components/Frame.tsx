@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { asset } from "@/lib/assets";
 
 type Props = {
   alt: string;
@@ -11,16 +12,18 @@ type Props = {
   priority?: boolean;
   /** Purely ornamental: empty alt, hidden from assistive tech. */
   decorative?: boolean;
+  /** Paper mat with ornamental corners. */
+  matted?: boolean;
   className?: string;
 };
 
 /** Image with explicit aspect ratio. Renders a marked placeholder until `src` is supplied. */
-export default function Frame({ alt, ratio, index, caption, src, tone = "paper", priority, decorative, className = "" }: Props) {
+export default function Frame({ alt, ratio, index, caption, src, tone = "paper", priority, decorative, matted, className = "" }: Props) {
   return (
-    <figure className={`frame ${decorative ? "decorative" : ""} ${className}`} aria-hidden={decorative || undefined}>
+    <figure className={`frame ${decorative ? "decorative" : ""} ${matted ? "matted" : ""} ${className}`} aria-hidden={decorative || undefined}>
       <div className={`frame-art tone-${tone}`} style={{ aspectRatio: ratio } as CSSProperties}>
         {src ? (
-          <img src={src} alt={decorative ? "" : alt} loading={priority ? "eager" : "lazy"} decoding="async" />
+          <img src={src.startsWith("/") ? asset(src) : src} alt={decorative ? "" : alt} loading={priority ? "eager" : "lazy"} decoding="async" />
         ) : (
           <div className="placeholder" role={decorative ? undefined : "img"} aria-label={decorative ? undefined : `${alt} (placeholder)`}>
             <span>Image needed</span>

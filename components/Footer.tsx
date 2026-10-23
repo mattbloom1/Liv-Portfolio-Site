@@ -3,6 +3,7 @@ import { contact } from "@/lib/projects";
 export default function Footer() {
   return (
     <footer className="site-footer">
+      <span className="rule rule-gold" aria-hidden="true" />
       <p className="wordmark-sm">Liv Polani</p>
       <ul>
         <li><a href={`mailto:${contact.email}`}>Email</a></li>

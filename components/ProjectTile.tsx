@@ -6,7 +6,7 @@ export default function ProjectTile({ project, number, className = "" }: { proje
   const meta = [project.year, project.category].filter(Boolean).join(" · ");
   return (
     <Link href={`/projects/${project.slug}/`} className={`tile ${className}`}>
-      <Frame alt={project.coverAlt} ratio={project.ratio} tone={number % 2 ? "paper" : "rose"} />
+      <Frame matted alt={project.coverAlt} ratio={project.ratio} tone={number % 2 ? "paper" : "rose"} />
       <span className="tile-meta">
         <span className="idx">{String(number).padStart(2, "0")}</span>
         <h2 className="tile-title">{project.title}</h2>
