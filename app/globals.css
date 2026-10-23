@@ -16,7 +16,6 @@
   --font-sans: "DM Sans", system-ui, sans-serif;
   --font-accent: "Grenze", Georgia, serif;
 
-  --rule: 1px solid currentColor;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --fast: 180ms;
   --slow: 400ms;
@@ -106,7 +105,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .botanical::before { background-image: var(--t-night); opacity: 1; }
 .pale::before { background-image: var(--t-pale); opacity: 0.22; mix-blend-mode: luminosity; }
 .botanical::after, .pale::after { content: ""; position: absolute; inset: 0; z-index: -1; }
-.botanical::after { background: radial-gradient(90% 80% at 75% 25%, rgba(77, 35, 56, 0.35), rgba(36, 35, 32, 0.8) 85%); }
+.botanical::after { background: linear-gradient(90deg, rgba(36, 35, 32, 0.85), transparent 70%), radial-gradient(90% 80% at 75% 25%, rgba(77, 35, 56, 0.35), rgba(36, 35, 32, 0.8) 85%); }
 .pale::after { background: linear-gradient(rgba(32, 43, 64, 0.82), rgba(32, 43, 64, 0.92)); }
 
 /* Ornaments: SVG masks coloured by the element's text colour */
@@ -116,14 +115,13 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .matted::before, .matted::after { content: ""; position: absolute; width: 3.25rem; aspect-ratio: 1; color: var(--color-oxblood); background: currentColor; -webkit-mask: var(--m-corner) center / contain no-repeat; mask: var(--m-corner) center / contain no-repeat; pointer-events: none; z-index: 1; }
 .matted::before { top: 0.35rem; left: 0.35rem; }
 .matted::after { bottom: 0.35rem; right: 0.35rem; transform: rotate(180deg); }
-.matted figcaption { margin-top: var(--space-3); }
 
 /* Frames and placeholders */
 .frame { position: relative; }
 .frame-art { position: relative; width: 100%; overflow: hidden; background: var(--color-paper-shadow); }
 .frame-art img { transition: transform var(--slow) var(--ease); }
 .tile:hover .frame-art img, .tile:focus-visible .frame-art img { transform: scale(1.04); }
-.frame figcaption { display: flex; gap: var(--space-3); margin-top: var(--space-2); font-size: 0.8125rem; line-height: 1.4; }
+.frame figcaption { position: relative; z-index: 2; display: flex; gap: var(--space-3); margin-top: var(--space-2); font-size: 0.8125rem; line-height: 1.4; }
 .placeholder {
   position: absolute; inset: 0; display: grid; place-items: center;
   color: var(--color-ink); font: 0.8125rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: 0.08em;
@@ -131,7 +129,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .placeholder::before { content: ""; position: absolute; inset: 0.6rem; border: 1px solid currentColor; opacity: 0.55; }
 .placeholder::after { content: ""; position: absolute; inset: 0.85rem; border: 1px solid currentColor; opacity: 0.3; }
 .tone-paper { background: linear-gradient(155deg, #ddd2ba, var(--color-paper-shadow)); }
-.tone-rose { background: linear-gradient(155deg, var(--color-dusty-rose), #9c7478); }
+.tone-rose { background: linear-gradient(155deg, var(--color-dusty-rose), #c4999d); }
 .tone-midnight { background: linear-gradient(155deg, #2c3a57, var(--color-midnight)); }
 .tone-midnight .placeholder { color: var(--color-parchment); }
 
@@ -151,7 +149,6 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .c-main::after { content: ""; position: absolute; inset: -4% -9% 2% -9%; color: var(--color-oxblood); background: currentColor; -webkit-mask: var(--m-arch) center / 100% 100% no-repeat; mask: var(--m-arch) center / 100% 100% no-repeat; pointer-events: none; opacity: 0.7; }
 .c-a { grid-column: 1 / span 2; position: absolute; width: 34%; left: -6%; bottom: 2%; z-index: 2; transform: rotate(-4deg); box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45); }
 .c-b { position: absolute; width: 28%; right: -3%; top: 10%; z-index: 2; transform: rotate(3deg); box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45); }
-.c-a figcaption, .c-b figcaption { display: none; }
 .decorative .placeholder span { display: none; }
 
 @media (max-width: 960px) {
@@ -243,7 +240,6 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
 @media (prefers-reduced-motion: no-preference) {
   .reveal { animation: rise 450ms var(--ease) backwards; }
-  .hero-copy { animation-delay: 0ms; }
   .c-main { animation-delay: 120ms; }
   .c-a { animation-delay: 220ms; }
   .c-b { animation-delay: 300ms; }
