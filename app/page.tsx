@@ -6,6 +6,7 @@ import { contact, introLine, projects } from "@/lib/projects";
 import "./home.css";
 
 const bySlug = (slug: string) => projects.find((p) => p.slug === slug)!;
+const lace = (k: string) => asset(`/collage/lace/lace-${k}.webp`);
 const scrap = (n: number) => asset(`/collage/scrap/bt${n}.webp`);
 
 /** Decorative paper piece: empty alt, hidden from assistive tech. */
@@ -19,6 +20,10 @@ export default function Home() {
   const marant = bySlug("isabel-marant");
   return (
     <div className="ha" style={{ "--sepia-fox": `url("${asset("/collage/bg/sepia-32.webp")}")` } as CSSProperties}>
+      <Piece src={lace("a")} className="lace lace-1" />
+      <Piece src={lace("c")} className="lace lace-2" />
+      <Piece src={lace("b")} className="lace lace-3" />
+      <Piece src={lace("d")} className="lace lace-4" />
       <section className="ha-desk" aria-labelledby="ha-title">
         <div className="ha-stage">
           <Piece src={scrap(29)} className="pc-math" />
@@ -36,17 +41,35 @@ export default function Home() {
             <Piece src={scrap(3)} className="tape tape-liv" />
           </figure>
           <figure className="spec spec-a fx-shadow">
-            <img src={asset(endure.cover.src)} alt={endure.cover.alt} loading="eager" decoding="async" />
+            <Link href={`/projects/${endure.slug}/`} className="spec-link" aria-label={`${endure.title}, view project`}>
+              <img src={asset(endure.cover.src)} alt={endure.cover.alt} loading="eager" decoding="async" />
+              <span className="pop" aria-hidden="true">
+                <b>{endure.title}</b>
+                <i>{endure.category ?? "Collection"}</i>
+              </span>
+            </Link>
             <Piece src={scrap(20)} className="tape tape-a" />
             <figcaption>Plate 01</figcaption>
           </figure>
           <figure className="spec spec-b fx-shadow">
-            <img src={asset(strapless.cover.src)} alt={strapless.cover.alt} loading="lazy" decoding="async" />
+            <Link href={`/projects/${strapless.slug}/`} className="spec-link" aria-label={`${strapless.title}, view project`}>
+              <img src={asset(strapless.cover.src)} alt={strapless.cover.alt} loading="lazy" decoding="async" />
+              <span className="pop" aria-hidden="true">
+                <b>{strapless.title}</b>
+                <i>{strapless.category ?? "Collection"}</i>
+              </span>
+            </Link>
             <Piece src={scrap(22)} className="tape tape-b" />
             <figcaption>Plate 02</figcaption>
           </figure>
           <figure className="spec spec-c fx-shadow">
-            <img src={asset(marant.cover.src)} alt={marant.cover.alt} loading="lazy" decoding="async" />
+            <Link href={`/projects/${marant.slug}/`} className="spec-link" aria-label={`${marant.title}, view project`}>
+              <img src={asset(marant.cover.src)} alt={marant.cover.alt} loading="lazy" decoding="async" />
+              <span className="pop" aria-hidden="true">
+                <b>{marant.title}</b>
+                <i>{marant.category ?? "Collection"}</i>
+              </span>
+            </Link>
             <Piece src={scrap(2)} className="tape tape-c" />
             <figcaption>Plate 03</figcaption>
           </figure>

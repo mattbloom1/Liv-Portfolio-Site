@@ -10,7 +10,7 @@ export default function Projects() {
       <h1 className="page-title">Projects</h1>
       <div className="gallery">
         {projects.map((p, i) => (
-          <ProjectTile key={p.slug} project={p} number={i + 1} className={`g-${i % 3}`} />
+          <ProjectTile key={p.slug} project={p} number={i + 1} />
         ))}
       </div>
     </section>
