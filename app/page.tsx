@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import InkName from "@/components/InkName";
 import { asset } from "@/lib/assets";
 import { contact, introLine, projects } from "@/lib/projects";
 import "./home.css";
@@ -25,12 +26,10 @@ export default function Home() {
           <Piece src={scrap(5)} className="pc-ledger" />
           <Piece src={scrap(31)} className="pc-note" />
 
-          <h1 id="ha-title" className="ha-title">
-            <span className="ha-first">Liv</span>{" "}
-            <span className="ha-last">Polani</span>
-            <span className="ha-sub">Fashion portfolio</span>
-          </h1>
-          <Link href="/projects/" className="btn ha-cta">View projects</Link>
+          <div className="ha-title">
+            <h1 id="ha-title"><InkName text="Liv Polani" /></h1>
+            <p className="ha-sub">Fashion portfolio</p>
+          </div>
 
           <figure className="spec spec-liv fx-shadow">
             <img src={asset("/about/liv.webp")} alt="Liv Polani resting her chin on her hand" loading="eager" decoding="async" />

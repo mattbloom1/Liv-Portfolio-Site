@@ -6,9 +6,15 @@ The home page (`app/page.tsx`, styles in `app/home.css`) is the "Desk" concept, 
 
 A foxed paper table. Scanned ledger and notebook scraps, tape and white-border plates are scattered at angles over the paper. Below the fold, the work is listed as a ledger register (hovering or focusing a row drops a plate beside it), followed by a taped correspondence slip with email and social links.
 
+- The hero name is one upright line, "Liv Polani", in the display face. Hovering it triggers an ink bleed: letters near the pointer thicken and roughen through an SVG displacement filter (`components/InkName.tsx`, `.ink-l` rules in `app/home.css`). The effect is pointer-only and is skipped under `prefers-reduced-motion`; the name is exposed to screen readers as plain text.
 - The hero is a fixed 16:10 stage scaled with container query units, so the collage keeps its composition at every desktop width. Below 800px the stage becomes a simple two-column stack of plates and the loose scraps are hidden.
 - Plates 01 to 03 show the Endure, Strapless Dress and Isabel Marant covers. The portrait is `public/about/liv.webp`.
 - Copy comes from `lib/projects.ts` (intro line, titles, categories, contact). "Plate 01" and "Register of work" are structural labels; change or drop them if Liv prefers.
+
+## Header and footer (site-wide)
+
+- Header: white bar with an ink hairline. The wordmark and nav links share the display face, upright (no italics).
+- Footer (`components/Footer.tsx`, `.site-footer` in `app/globals.css`): solid oxblood block with a paper-scan texture over it, a huge uppercase "Liv Polani" bottom-left, and on the right the email line plus three columns (Work, Pages, Elsewhere) with small uppercase headings over serif link lists. Inspired by the Coutumes footer Matt shared, in the project palette. On phones it stacks with the wordmark last.
 
 ## Assets (`public/collage/`)
 
