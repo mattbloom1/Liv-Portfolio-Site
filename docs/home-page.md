@@ -43,3 +43,4 @@ Evaluated and left out: Gothic Floral and its wallpaper, Art Nouveau Frame Ornam
 - Projects: a single column; covers alternate left and right and all use a 4:3 crop (`components/ProjectTile.tsx`, `.gallery` in `app/globals.css`).
 - About: the portrait is surrounded by lace, ledger scrap, note scrap and tape pieces (`.about-art`, `.ap-*`).
 - Lace cutouts come from the Fine Lace Textures pack (15 black-background photos, 5000px). Other images in it (1, 3, 4, 5, 6, 7, 9, 10, 13 to 15) are unused and can be cut the same way (alpha from luminance).
+- Contact: the message field is a "lace box" (`.lace-box` in `app/globals.css`): an ivory paper textarea set in an oxblood ground with `lace-b.webp` trim along the top and bottom. Focus shows an oxblood ring around the whole box; an empty-submit error adds a dashed outline plus the existing error text.
