@@ -40,19 +40,19 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         )}
       </header>
 
-      <Frame className="opening" alt={project.coverAlt} ratio="16 / 10" index="Plate 01" priority />
+      <Frame className="opening" src={project.cover.src} alt={project.cover.alt} ratio={project.cover.ratio} index="Plate 01" priority />
 
       {project.description && <p className="lede description">{project.description}</p>}
 
       <div className="sequence">
-        {project.images.map((ratio, n) => (
+        {project.images.map((image, n) => (
           <Frame
             key={n}
             className={`s-${n % 4}`}
-            alt={`${project.title}, image ${n + 1}`}
-            ratio={ratio}
+            src={image.src}
+            alt={image.alt}
+            ratio={image.ratio}
             index={`Plate ${String(n + 2).padStart(2, "0")}`}
-            tone={n % 2 ? "rose" : "paper"}
           />
         ))}
       </div>

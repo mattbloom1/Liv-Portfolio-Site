@@ -4,6 +4,7 @@ import ProjectTile from "@/components/ProjectTile";
 import { introLine, projects } from "@/lib/projects";
 
 export default function Home() {
+  const hero = projects[1];
   return (
     <>
       <section className="hero dark botanical">
@@ -17,9 +18,9 @@ export default function Home() {
         </div>
         <div className="collage">
           <div className="panel" aria-hidden="true" />
-          <Frame className="c-main reveal" alt="Hero fashion image" ratio="4 / 5" index="Fig. 01" tone="paper" priority />
-          <Frame className="c-a reveal" decorative alt="" ratio="1 / 1" tone="rose" />
-          <Frame className="c-b reveal" decorative alt="" ratio="3 / 4" tone="midnight" />
+          <Frame className="c-main reveal" src={hero.cover.src} alt={hero.cover.alt} ratio="4 / 5" index={hero.title} priority />
+          <Frame className="c-a reveal" decorative src={projects[2].cover.src} alt="" ratio="1 / 1" tone="rose" />
+          <Frame className="c-b reveal" decorative src={projects[0].cover.src} alt="" ratio="3 / 4" tone="midnight" />
         </div>
       </section>
 
@@ -49,7 +50,7 @@ export default function Home() {
           <Link href="/projects/" className="link-rule">All projects</Link>
         </div>
         <div className="row">
-          {projects.map((p, i) => (
+          {projects.slice(0, 3).map((p, i) => (
             <ProjectTile key={p.slug} project={p} number={i + 1} />
           ))}
         </div>
