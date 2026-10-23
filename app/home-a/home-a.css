@@ -1,0 +1,76 @@
+/* Draft A: a paper desk. Real scanned scraps, tape and plates thrown across a foxed table. */
+.ha { overflow-x: clip; position: relative; }
+.ha::before { content: ""; position: absolute; inset: 0; background: var(--sepia-fox) center / cover; opacity: 0.14; mix-blend-mode: multiply; pointer-events: none; }
+.ha > :not(.variant-nav) { position: relative; }
+.ha .pc { position: absolute; display: block; height: auto; pointer-events: none; user-select: none; filter: drop-shadow(0 0.7rem 0.8rem rgba(36, 35, 32, 0.3)); }
+
+.ha-desk { padding: var(--space-4) var(--gutter) var(--space-8); }
+.ha-stage { container-type: inline-size; position: relative; aspect-ratio: 16 / 10; width: min(100%, calc((100svh - 6.5rem) * 1.6)); margin-inline: auto; }
+.ha-stage > * { position: absolute; }
+
+.pc-math { left: 36%; top: 0; width: 17%; transform: rotate(6deg); }
+.pc-burnt { left: 49%; top: 3%; width: 16%; transform: rotate(-7deg); }
+.pc-ledger { left: 0; top: 63%; width: 33%; transform: rotate(-3deg); }
+.pc-note { left: 31%; top: 66%; width: 14%; transform: rotate(8deg); }
+
+.ha-title { left: 1%; top: 4%; display: grid; line-height: 0.86; z-index: 3; mix-blend-mode: multiply; }
+.ha-first { font-size: 12.5cqw; font-style: italic; color: var(--color-oxblood); margin-left: 1.2cqw; }
+.ha-last { font-size: 15.5cqw; letter-spacing: -0.02em; }
+.ha-sub { font: 500 1.2cqw var(--font-accent); letter-spacing: 0.3em; text-transform: uppercase; margin: 2.2cqw 0 0 1.5cqw; border-top: 1px solid var(--color-ink); padding-top: 0.8cqw; width: max-content; }
+.ha-cta { left: 2%; top: 56%; z-index: 4; }
+
+.spec { margin: 0; background: var(--color-white); padding: 0.9cqw 0.9cqw 2.6cqw; }
+.spec img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.spec figcaption { position: absolute; left: 1.1cqw; bottom: 0.7cqw; font: 1.05cqw var(--font-accent); letter-spacing: 0.08em; }
+.ha .spec .tape { width: 30%; height: auto; filter: drop-shadow(0 0.15rem 0.2rem rgba(36, 35, 32, 0.3)); }
+.spec-liv { left: 54%; top: 9%; width: 21%; transform: rotate(3deg); z-index: 2; padding-bottom: 0.9cqw; }
+.tape-liv { left: 33%; top: -9%; transform: rotate(-6deg); }
+.spec-a { left: 77%; top: 3%; width: 21%; transform: rotate(-3deg); }
+.spec-a img, .spec-b img, .spec-c img { aspect-ratio: 5 / 4; }
+.tape-a { left: -14%; top: 2%; width: 12%; transform: rotate(35deg); }
+.spec-b { left: 40%; top: 57%; width: 26%; transform: rotate(-2deg); z-index: 2; }
+.tape-b { left: 35%; top: -9%; transform: rotate(3deg); }
+.spec-c { left: 70%; top: 50%; width: 24%; transform: rotate(4deg); z-index: 2; }
+.tape-c { right: -3%; top: 3%; width: 6%; transform: rotate(40deg); }
+
+.ha-index { display: grid; grid-template-columns: 4fr 8fr; gap: var(--space-16); max-width: var(--max); margin-inline: auto; padding: var(--space-16) var(--gutter) var(--space-24); }
+.ha-intro { font: italic clamp(2rem, 3.6vw, 3.6rem)/1.08 var(--font-display); margin-top: var(--space-6); color: var(--color-oxblood); }
+.ha-ledger { border-top: 3px double var(--color-oxblood); }
+.ha-ledger li { border-bottom: 1px solid rgba(77, 35, 56, 0.45); position: relative; }
+.ha-ledger a { display: grid; grid-template-columns: 3.5rem 1fr auto; align-items: baseline; gap: var(--space-4); padding: var(--space-6) var(--space-2); min-height: 44px; }
+.ha-ledger .n { font: 1rem var(--font-accent); color: var(--color-oxblood); }
+.ha-ledger .t { font: clamp(1.8rem, 3.4vw, 3.4rem)/1 var(--font-display); }
+.ha-ledger .k { font: 0.8125rem var(--font-sans); letter-spacing: 0.06em; text-transform: uppercase; }
+.ha-ledger .peek { position: absolute; right: 12%; top: 50%; width: 15rem; height: auto; aspect-ratio: 5 / 4; object-fit: cover; padding: 0.4rem; background: var(--color-white); transform: translateY(-50%) rotate(4deg) scale(0.92); opacity: 0; pointer-events: none; transition: opacity var(--fast) var(--ease), transform var(--slow) var(--ease); box-shadow: 0 0.9rem 1.8rem rgba(36, 35, 32, 0.35); z-index: 2; }
+.ha-ledger li:nth-child(even) .peek { transform: translateY(-50%) rotate(-3deg) scale(0.92); }
+.ha-ledger a:hover .peek, .ha-ledger a:focus-visible .peek { opacity: 1; transform: translateY(-50%) rotate(2deg) scale(1); }
+.ha-ledger a:hover .t, .ha-ledger a:focus-visible .t { font-style: italic; color: var(--color-oxblood); }
+.pc-margin { left: -2rem; bottom: 1rem; width: 12rem; transform: rotate(-10deg); opacity: 0.9; }
+
+.ha-slip { padding: var(--space-8) var(--gutter) var(--space-24); display: grid; justify-items: center; }
+.slip { position: relative; display: grid; gap: var(--space-4); justify-items: center; text-align: center; padding: var(--space-16) clamp(2rem, 8vw, 7rem); background: var(--color-white) var(--t-paper); background-blend-mode: multiply; transform: rotate(-1.2deg); max-width: 40rem; width: 100%; }
+.tape-slip { position: absolute; top: -2.6rem; left: calc(50% - 6rem); width: 12rem; height: auto; transform: rotate(2deg); }
+.ha-mail { font: italic clamp(1.6rem, 4vw, 2.8rem)/1.1 var(--font-display); overflow-wrap: anywhere; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; padding-block: var(--space-2); }
+.ha-links { display: flex; gap: var(--space-8); }
+.ha-links a { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-oxblood); }
+
+@media (max-width: 800px) {
+  .ha-stage { aspect-ratio: auto; width: 100%; container-type: normal; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-4); padding-top: var(--space-6); }
+  .ha-stage > * { position: relative; left: auto; top: auto; width: auto; }
+  .ha .pc-math, .ha .pc-burnt, .ha .pc-ledger, .ha .pc-note, .ha .pc-margin { display: none; }
+  .ha-title { grid-column: 1 / -1; mix-blend-mode: normal; }
+  .ha-first { font-size: 22vw; } .ha-last { font-size: 27vw; } .ha-sub { font-size: 0.75rem; margin-top: var(--space-4); }
+  .ha-cta { grid-column: 1 / -1; justify-self: start; }
+  .spec { padding: 0.5rem 0.5rem 1.8rem; }
+  .spec figcaption { font-size: 0.75rem; left: 0.6rem; bottom: 0.4rem; }
+  .spec-liv img { aspect-ratio: 4 / 5; }
+  .spec-a img, .spec-b img, .spec-c img { aspect-ratio: 5 / 4; }
+  .spec-liv, .spec-a, .spec-b, .spec-c { width: auto; }
+  .ha .spec .tape { width: 5rem; }
+  .tape-liv { left: 30%; top: -0.8rem; } .tape-a { left: -1rem; top: 0; } .tape-b { left: 30%; top: -0.8rem; } .tape-c { right: -1rem; top: 0; }
+  .ha-index { grid-template-columns: 1fr; gap: var(--space-8); }
+  .ha-ledger a { grid-template-columns: 2.5rem 1fr; }
+  .ha-ledger .k { grid-column: 2; }
+  .ha-ledger .peek { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .ha-ledger .peek { transition: none; } }
