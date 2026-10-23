@@ -1,0 +1,74 @@
+/* Draft B: night garden. Botanical prints behind everything, gold art nouveau frames around the work. */
+.hb { background: var(--color-ink); color: var(--color-white); overflow-x: clip; }
+.hb .gd { position: absolute; pointer-events: none; height: auto; max-width: none; user-select: none; }
+
+.hb-hero { position: relative; isolation: isolate; min-height: calc(100svh - 4.5rem); display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; gap: var(--space-8); padding: var(--space-12) var(--gutter) var(--space-16); }
+.hb-hero-bg { position: absolute; inset: 0; z-index: -1; background: var(--rose) center / cover; }
+.hb-hero-bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 90% at 28% 50%, rgba(36, 35, 32, 0.35), rgba(36, 35, 32, 0.78)); }
+.hb-portrait { grid-column: 2 / span 4; position: relative; aspect-ratio: 969 / 1400; height: min(calc(100svh - 8rem), 44rem); justify-self: center; z-index: 1; }
+.hb-portrait > img:first-child { position: absolute; left: 12%; top: 7.5%; width: 76%; height: 85%; max-width: none; object-position: 36% 50%; }
+.hb-frame { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.hb-copy { grid-column: 7 / span 6; display: grid; gap: var(--space-6); justify-items: start; z-index: 1; }
+.hb-copy .eyebrow { text-shadow: 0 0 0.6rem #000, 0 0 1.2rem #000; color: #d9b36b; letter-spacing: 0.2em; text-transform: uppercase; }
+.hb h1 { display: grid; line-height: 0.9; font-size: clamp(3.2rem, 9vw, 10rem); text-transform: uppercase; letter-spacing: 0.08em; }
+.hb h1 .l1 { font-style: italic; text-transform: none; letter-spacing: 0; color: #d9b36b; font-size: 0.8em; margin-left: 0.2em; }
+.hb h1 .l2 { text-shadow: 0 0.04em 0.3em rgba(0, 0, 0, 0.6); }
+.hb-btn { padding: var(--space-3) var(--space-8); min-height: 44px; display: inline-flex; align-items: center; border: 1px solid #d9b36b; color: #e8cf94; outline: 1px solid transparent; outline-offset: 4px; transition: outline-color var(--fast), background var(--fast); }
+.hb-btn:hover { outline-color: #d9b36b; background: rgba(165, 138, 88, 0.14); }
+.hb :focus-visible { outline-color: var(--color-parchment); box-shadow: 0 0 0 5px var(--color-ink); }
+.gd-sw { left: -4%; bottom: -3%; width: 34%; opacity: 0.9; z-index: 0; }
+.gd-leaf { right: 2%; top: 4%; width: 22%; opacity: 0.85; z-index: 0; transform: rotate(8deg); }
+
+.hb-intro { position: relative; min-height: 80svh; display: grid; place-items: center; padding: var(--space-24) var(--gutter); text-align: center; background: linear-gradient(rgba(32, 43, 64, 0.72), rgba(32, 43, 64, 0.88)), var(--navy) center / cover; border-block: 3px double var(--color-aged-gold); }
+.hb-intro p { font: italic clamp(2.6rem, 8vw, 8rem)/0.98 var(--font-display); max-width: 14ch; text-wrap: balance; }
+.gd-c { width: clamp(8rem, 18vw, 17rem); opacity: 0.95; }
+.gd-c1 { left: 3%; top: 4%; }
+.gd-c2 { right: 3%; bottom: 4%; transform: rotate(180deg); }
+
+.hb-works { position: relative; padding: var(--space-24) var(--gutter); display: grid; gap: var(--space-24); background: linear-gradient(rgba(36, 35, 32, 0.72), rgba(36, 35, 32, 0.9)), var(--rose) center top / 120% auto; }
+.hb-vert { position: absolute; left: var(--gutter); top: var(--space-24); writing-mode: vertical-rl; font: italic clamp(1.4rem, 2.4vw, 2.4rem) var(--font-display); color: #d9b36b; letter-spacing: 0.08em; }
+.work { max-width: 70rem; width: 100%; margin-inline: auto; }
+.work-link { position: relative; display: grid; grid-template-columns: 5fr 3fr; align-items: end; gap: var(--space-8); padding-block: var(--space-6); }
+.work-r .work-link { grid-template-columns: 3fr 5fr; }
+.work-r .work-img { order: 2; }
+.work-no { position: absolute; top: -0.3em; left: 0; z-index: 2; font: italic clamp(6rem, 16vw, 15rem)/0.8 var(--font-display); color: transparent; -webkit-text-stroke: 1px #d9b36b; pointer-events: none; }
+.work-r .work-no { left: auto; right: 0; }
+.work-img { position: relative; display: block; aspect-ratio: 720 / 600; }
+.work-img img:first-child { position: absolute; left: 10%; top: 11%; width: 80%; height: 77%; object-fit: cover; transition: transform var(--slow) var(--ease), filter var(--slow); }
+.work-frame { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.work-title { font: clamp(2rem, 4.4vw, 4.4rem)/1 var(--font-display); text-wrap: balance; padding-bottom: var(--space-8); }
+.work-open { font-size: 1rem; position: absolute; right: 0; bottom: 0; font: 0.9375rem var(--font-accent); letter-spacing: 0.1em; color: #e8cf94; border-bottom: 1px solid currentColor; padding-block: var(--space-2); }
+.work-r .work-open { right: auto; left: 0; }
+.work-link:hover .work-title, .work-link:focus-visible .work-title { font-style: italic; color: #e8cf94; }
+.work-link:hover .work-img img:first-child { transform: scale(1.04); }
+
+.hb-end { position: relative; overflow: hidden; display: grid; gap: var(--space-6); justify-items: center; text-align: center; padding: var(--space-24) var(--gutter) 10rem; background: linear-gradient(rgba(32, 43, 64, 0.8), rgba(32, 43, 64, 0.94)), var(--navy) center / cover; }
+.hb-end h2 { font-style: italic; font-size: clamp(2.6rem, 7vw, 7rem); }
+.hb-mail { font: clamp(1.3rem, 3vw, 2.2rem) var(--font-display); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.3em; color: #e8cf94; padding-block: var(--space-3); overflow-wrap: anywhere; }
+.gd-sw2 { right: -6%; bottom: -8%; width: 42%; opacity: 0.8; transform: scaleX(-1); }
+
+@media (max-width: 900px) {
+  .hb-hero { grid-template-columns: 1fr; }
+  .hb-portrait, .hb-copy { grid-column: 1; }
+  .hb-portrait { height: auto; width: min(80%, 22rem); }
+  .gd-sw { width: 60%; } .gd-leaf { width: 40%; top: 1%; }
+  .hb-vert { position: static; writing-mode: horizontal-tb; margin-bottom: calc(var(--space-12) * -1); }
+  .work-link, .work-r .work-link { grid-template-columns: 1fr; }
+  .work-r .work-img { order: 0; }
+  .work-title { padding-bottom: var(--space-4); }
+  .work-open { position: static; justify-self: start; }
+  .work-no { font-size: 7rem; }
+  .gd-c { width: 7rem; }
+}
+
+/* Scroll-linked drift on the gold ornaments, where supported. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes drift { from { translate: 0 6rem; } to { translate: 0 -6rem; } }
+    @keyframes sway { from { rotate: -4deg; translate: -2rem 0; } to { rotate: 6deg; translate: 2rem 0; } }
+    .gd-leaf, .gd-sw, .gd-sw2 { animation: drift linear both; animation-timeline: view(); animation-range: cover; }
+    .work-no { animation: sway linear both; animation-timeline: view(); animation-range: cover; }
+        @keyframes drift-sm { from { translate: 0 2rem; } to { translate: 0 -2rem; } }
+    .work-img { animation: drift-sm linear both; animation-timeline: view(); animation-range: cover; }
+  }
+}
