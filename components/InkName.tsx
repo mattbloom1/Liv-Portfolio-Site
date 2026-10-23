@@ -1,25 +1,42 @@
 "use client";
 
-import { useId, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 
 /** Ink-bleed hover: letters near the pointer swell and roughen like wet ink on paper. Skipped under reduced motion. */
 export default function InkName({ text, className }: { text: string; className?: string }) {
   const root = useRef<HTMLSpanElement>(null);
   const fid = `ink-${useId().replace(/:/g, "")}`;
 
-  const move = (e: React.PointerEvent) => {
-    if (e.pointerType === "touch" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    root.current?.querySelectorAll<HTMLElement>("[data-l]").forEach((el) => {
-      const r = el.getBoundingClientRect();
-      const d = Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2));
-      const reach = r.height * 0.9;
-      el.dataset.b = d < reach * 0.35 ? "3" : d < reach * 0.7 ? "2" : d < reach ? "1" : "0";
-    });
-  };
-  const leave = () => root.current?.querySelectorAll<HTMLElement>("[data-l]").forEach((el) => (el.dataset.b = "0"));
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const letters = () => root.current?.querySelectorAll<HTMLElement>("[data-l]") ?? [];
+    const clear = () => letters().forEach((el) => (el.dataset.b = "0"));
+    let frame = 0;
+    const move = (e: PointerEvent) => {
+      if (e.pointerType === "touch") return;
+      if (reduce.matches) return clear();
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        letters().forEach((el) => {
+          const r = el.getBoundingClientRect();
+          const d = Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2));
+          // Reach is generous so the effect starts well before the pointer touches the letters.
+          const reach = r.height * 2.2;
+          el.dataset.b = d < reach * 0.3 ? "3" : d < reach * 0.55 ? "2" : d < reach ? "1" : "0";
+        });
+      });
+    };
+    document.addEventListener("pointermove", move);
+    document.documentElement.addEventListener("pointerleave", clear);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener("pointermove", move);
+      document.documentElement.removeEventListener("pointerleave", clear);
+    };
+  }, []);
 
   return (
-    <span ref={root} className={className} onPointerMove={move} onPointerLeave={leave}>
+    <span ref={root} className={className}>
       <span className="sr-only">{text}</span>
       <span aria-hidden="true">
         {Array.from(text).map((ch, i) =>

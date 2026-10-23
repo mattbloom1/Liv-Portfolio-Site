@@ -9,6 +9,7 @@ const url = (path: string) => `url("${asset(path)}")`;
 export const assetVars = {
   "--t-paper": url("/textures/paper-light.webp"),
   "--t-shadow": url("/textures/paper-shadow.webp"),
+  "--t-damask": url("/textures/damask.webp"),
   "--t-night": url("/textures/botanical-night.webp"),
   "--t-pale": url("/textures/botanical-pale.webp"),
   "--m-corner": url("/ornaments/corner_ornament02.svg"),
