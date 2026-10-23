@@ -9,18 +9,20 @@ type Props = {
   src?: string;
   tone?: "paper" | "rose" | "midnight";
   priority?: boolean;
+  /** Purely ornamental: empty alt, hidden from assistive tech. */
+  decorative?: boolean;
   className?: string;
 };
 
 /** Image with explicit aspect ratio. Renders a marked placeholder until `src` is supplied. */
-export default function Frame({ alt, ratio, index, caption, src, tone = "paper", priority, className = "" }: Props) {
+export default function Frame({ alt, ratio, index, caption, src, tone = "paper", priority, decorative, className = "" }: Props) {
   return (
-    <figure className={`frame ${className}`}>
+    <figure className={`frame ${decorative ? "decorative" : ""} ${className}`} aria-hidden={decorative || undefined}>
       <div className={`frame-art tone-${tone}`} style={{ aspectRatio: ratio } as CSSProperties}>
         {src ? (
-          <img src={src} alt={alt} loading={priority ? "eager" : "lazy"} decoding="async" />
+          <img src={src} alt={decorative ? "" : alt} loading={priority ? "eager" : "lazy"} decoding="async" />
         ) : (
-          <div className="placeholder" role="img" aria-label={`${alt} (placeholder)`}>
+          <div className="placeholder" role={decorative ? undefined : "img"} aria-label={decorative ? undefined : `${alt} (placeholder)`}>
             <span>Image needed</span>
           </div>
         )}

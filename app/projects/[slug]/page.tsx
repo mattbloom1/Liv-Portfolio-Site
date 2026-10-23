@@ -14,8 +14,6 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return { title: projects.find((p) => p.slug === slug)?.title };
 }
 
-const ratios = ["3 / 4", "1 / 1", "4 / 5", "16 / 10", "3 / 4"];
-
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const i = projects.findIndex((p) => p.slug === slug);
@@ -47,12 +45,12 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       {project.description && <p className="lede description">{project.description}</p>}
 
       <div className="sequence">
-        {Array.from({ length: project.images }, (_, n) => (
+        {project.images.map((ratio, n) => (
           <Frame
             key={n}
             className={`s-${n % 4}`}
             alt={`${project.title}, image ${n + 1}`}
-            ratio={ratios[n % ratios.length]}
+            ratio={ratio}
             index={`Plate ${String(n + 2).padStart(2, "0")}`}
             tone={n % 2 ? "rose" : "paper"}
           />

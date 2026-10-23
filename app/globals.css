@@ -31,7 +31,6 @@ body {
   background: var(--color-parchment);
   color: var(--color-ink);
   font: 1.0625rem/1.65 var(--font-sans);
-  overflow-x: hidden;
 }
 h1, h2, h3, p, ul, dl, figure { margin: 0; }
 ul { padding: 0; list-style: none; }
@@ -67,7 +66,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 }
 .wordmark { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; }
 .site-header ul { display: flex; gap: var(--space-8); }
-.site-header nav a, .link-rule { position: relative; padding-block: var(--space-1); font-size: 0.9375rem; }
+.site-header nav a, .link-rule { position: relative; padding-block: var(--space-3); font-size: 0.9375rem; display: inline-block; }
 .site-header nav a::after, .link-rule::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor;
   transform: scaleX(0); transform-origin: left; transition: transform var(--fast) var(--ease);
@@ -123,10 +122,10 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .tone-midnight .placeholder { color: var(--color-parchment); }
 
 /* Hero: layered paper collage */
-.hero { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-8); padding: var(--space-16) var(--gutter) var(--space-24); background: radial-gradient(120% 90% at 80% 20%, var(--color-oxblood), var(--color-ink) 70%); min-height: calc(100svh - 4.5rem); align-items: center; }
+.hero { overflow: hidden; display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-8); padding: var(--space-16) var(--gutter) var(--space-24); background: radial-gradient(120% 90% at 80% 20%, var(--color-oxblood), var(--color-ink) 70%); min-height: calc(100svh - 4.5rem); align-items: center; }
 .hero-copy { grid-column: 1 / span 6; display: grid; gap: var(--space-8); justify-items: start; }
 .hero-copy h1 { font-style: italic; }
-.hero-copy .eyebrow { color: var(--color-aged-gold); }
+.hero-copy .eyebrow { color: var(--color-parchment); }
 .collage { grid-column: 7 / span 6; position: relative; display: grid; grid-template-columns: repeat(6, 1fr); padding: var(--space-6); }
 .collage::before { content: ""; position: absolute; inset: 0 0 0 8%; background: var(--color-parchment); transform: rotate(2deg); box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35); }
 .collage::after { content: ""; position: absolute; inset: 4% 6% 4% 14%; border: 1px double var(--color-aged-gold); transform: rotate(2deg); pointer-events: none; }
@@ -134,7 +133,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .c-a { grid-column: 1 / span 2; position: absolute; width: 36%; left: -4%; bottom: -8%; z-index: 2; transform: rotate(-4deg); box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4); }
 .c-b { position: absolute; width: 30%; right: -3%; top: 6%; z-index: 2; transform: rotate(3deg); box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4); }
 .c-a figcaption, .c-b figcaption { display: none; }
-.c-a .placeholder span { display: none; }
+.decorative .placeholder span { display: none; }
 
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; min-height: 0; }
@@ -152,8 +151,8 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .row .tile:nth-child(2) { margin-top: var(--space-12); }
 .tile { display: grid; gap: var(--space-3); }
 .tile-meta { display: flex; gap: var(--space-3); align-items: baseline; flex-wrap: wrap; border-top: 1px solid var(--color-oxblood); padding-top: var(--space-2); }
-.tile-title { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.2; }
-.tile:hover .tile-title { text-decoration: underline; text-underline-offset: 0.25em; }
+.tile-title { font-size: 1.5rem; line-height: 1.2; letter-spacing: 0; }
+.tile:hover .tile-title, .tile:focus-visible .tile-title { text-decoration: underline; text-underline-offset: 0.25em; }
 .invite { display: grid; gap: var(--space-8); justify-items: start; padding-block: var(--space-24); background: var(--color-midnight); }
 .invite > * { max-width: var(--max); }
 @media (max-width: 800px) {
@@ -193,7 +192,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .contact { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); min-height: 60vh; }
 .contact > div:first-child { display: grid; gap: var(--space-6); align-content: start; justify-items: start; }
 .social { display: flex; gap: var(--space-6); }
-.social a { text-decoration: underline; text-underline-offset: 0.25em; }
+.social a { display: inline-block; padding-block: var(--space-3); text-decoration: underline; text-underline-offset: 0.25em; }
 .contact-form { display: grid; gap: var(--space-6); align-content: start; }
 .field { display: grid; gap: var(--space-2); }
 .field label { font-size: 0.875rem; font-weight: 500; }

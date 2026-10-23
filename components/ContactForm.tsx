@@ -26,7 +26,11 @@ export default function ContactForm() {
     const data = new FormData(form);
     const found = validate(data);
     setErrors(found);
-    if (Object.keys(found).length) return;
+    const first = (["name", "email", "message"] as const).find((k) => found[k]);
+    if (first) {
+      form.elements.namedItem(first) instanceof HTMLElement && (form.elements.namedItem(first) as HTMLElement).focus();
+      return;
+    }
 
     if (!endpoint) {
       const subject = encodeURIComponent(`Portfolio inquiry from ${data.get("name")}`);

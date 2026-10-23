@@ -4,8 +4,8 @@ export type Project = {
   coverAlt: string;
   /** Aspect ratio of the cover tile, e.g. "4 / 5". */
   ratio: string;
-  /** Number of sequence images on the detail page. */
-  images: number;
+  /** Aspect ratios of the sequence images on the detail page, in order. */
+  images: string[];
   description?: string;
   year?: string;
   category?: string;
@@ -15,9 +15,9 @@ export type Project = {
 
 /** Placeholder entries. Replace with Liv's real projects, covers and metadata. */
 export const projects: Project[] = [
-  { title: "Project One", slug: "project-one", coverAlt: "Cover image for Project One", ratio: "4 / 5", images: 4 },
-  { title: "Project Two", slug: "project-two", coverAlt: "Cover image for Project Two", ratio: "1 / 1", images: 3 },
-  { title: "Project Three", slug: "project-three", coverAlt: "Cover image for Project Three", ratio: "3 / 4", images: 5 },
+  { title: "Project One", slug: "project-one", coverAlt: "Cover image for Project One", ratio: "4 / 5", images: ["3 / 4", "1 / 1", "4 / 5", "16 / 10"] },
+  { title: "Project Two", slug: "project-two", coverAlt: "Cover image for Project Two", ratio: "1 / 1", images: ["1 / 1", "3 / 4", "16 / 10"] },
+  { title: "Project Three", slug: "project-three", coverAlt: "Cover image for Project Three", ratio: "3 / 4", images: ["4 / 5", "3 / 4", "1 / 1", "3 / 4", "16 / 10"] },
 ];
 
 export const contact = {
@@ -25,6 +25,9 @@ export const contact = {
   linkedin: "https://www.linkedin.com/in/livpolani/",
   instagram: "https://www.instagram.com/livpolani/",
 };
+
+/** Opening line of the bio; confirm with Liv as the homepage intro. */
+export const introLine = "I design with intention, not impulse.";
 
 export const bio = [
   "I design with intention, not impulse. As a fashion student at the University of Delaware, I'm deeply interested in directional trend research, concept development, and translating cultural insight into cohesive collections. My work is grounded in research but driven by instinct, balancing strategy with imagination.",

@@ -9,7 +9,7 @@ export default function ProjectTile({ project, number, className = "" }: { proje
       <Frame alt={project.coverAlt} ratio={project.ratio} tone={number % 2 ? "paper" : "rose"} />
       <span className="tile-meta">
         <span className="idx">{String(number).padStart(2, "0")}</span>
-        <span className="tile-title">{project.title}</span>
+        <h2 className="tile-title">{project.title}</h2>
         {meta && <span className="small">{meta}</span>}
       </span>
     </Link>

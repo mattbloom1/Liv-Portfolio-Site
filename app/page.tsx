@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Frame from "@/components/Frame";
 import ProjectTile from "@/components/ProjectTile";
-import { bio, projects } from "@/lib/projects";
+import { introLine, projects } from "@/lib/projects";
 
 export default function Home() {
-  const intro = bio[0].split(". ")[0] + ".";
   return (
     <>
       <section className="hero dark grain">
@@ -13,15 +12,15 @@ export default function Home() {
           <h1>Liv Polani&rsquo;s Fashion Portfolio</h1>
           <Link href="/projects/" className="btn btn-light">View projects</Link>
         </div>
-        <div className="collage" aria-hidden="false">
+        <div className="collage">
           <Frame className="c-main reveal" alt="Hero fashion image" ratio="4 / 5" index="No. 01" tone="paper" priority />
-          <Frame className="c-a reveal" alt="Supporting fragment one" ratio="1 / 1" tone="rose" />
-          <Frame className="c-b reveal" alt="Supporting fragment two" ratio="3 / 4" tone="midnight" />
+          <Frame className="c-a reveal" decorative alt="" ratio="1 / 1" tone="rose" />
+          <Frame className="c-b reveal" decorative alt="" ratio="3 / 4" tone="midnight" />
         </div>
       </section>
 
       <section className="section intro">
-        <p className="lede">{intro}</p>
+        <p className="lede">{introLine}</p>
         <Link href="/about/" className="link-rule">About Liv</Link>
       </section>
 

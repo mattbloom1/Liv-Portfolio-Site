@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const display = Ibarra_Real_Nova({ subsets: ["latin"], weight: ["400", "600"], style: ["normal", "italic"], variable: "--font-display", fallback: ["Georgia", "serif"] });
+const display = Ibarra_Real_Nova({ subsets: ["latin"], weight: ["400"], style: ["normal", "italic"], variable: "--font-display", fallback: ["Georgia", "serif"] });
 const sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-sans", fallback: ["system-ui", "sans-serif"] });
 const accent = Grenze({ subsets: ["latin"], weight: ["500"], variable: "--font-accent", fallback: ["Georgia", "serif"] });
 
