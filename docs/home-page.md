@@ -28,7 +28,7 @@ Processed from Matt's Envato downloads in `H:\My Drive\Liv Portfolio Site\envato
 | `scrap/bt5.webp` | same | Ledger page (hero, lower left) |
 | `scrap/bt6.webp`, `bt29.webp`, `bt31.webp` | same | Burnt note and handwritten notes behind the title |
 | `scrap/bt23.webp` | same | Margin note beside the register (desktop) |
-| `lace/lace-a..d.webp` | Antique Ornament (damask jpg) | Pressed-lace cutouts: the bright motifs are lifted into ivory alpha WebP. Scattered down the home page background and around the portrait on About |
+| `lace/lace-a..d.webp` | Fine Lace Textures (Matt's Downloads; images 12, 8, 2, 11) | Real lace photographed on black: luminance becomes alpha, tinted ivory, trimmed and resized. Scattered down the home background and around the portrait on About |
 | `bg/sepia-32.webp` | The Sepia Season, Victorian Editorial Backgrounds | Foxing overlay on the page |
 
 Evaluated and left out: Gothic Floral and its wallpaper, Art Nouveau Frame Ornament, Vintage Frame and Ornament Collection, Paper Cut Out Playground. The Deckle Edge Torn Paper pack (1.3 GB) was too large to pull in; it is the next candidate for torn section edges.
@@ -42,4 +42,4 @@ Evaluated and left out: Gothic Floral and its wallpaper, Art Nouveau Frame Ornam
 
 - Projects: a single column; covers alternate left and right and all use a 4:3 crop (`components/ProjectTile.tsx`, `.gallery` in `app/globals.css`).
 - About: the portrait is surrounded by lace, ledger scrap, note scrap and tape pieces (`.about-art`, `.ap-*`).
-- No true lace pack is in the Envato downloads; the lace cutouts come from the damask. A real lace or doily pack can replace the files in `public/collage/lace/` directly.
+- Lace cutouts come from the Fine Lace Textures pack (15 black-background photos, 5000px). Other images in it (1, 3, 4, 5, 6, 7, 9, 10, 13 to 15) are unused and can be cut the same way (alpha from luminance).

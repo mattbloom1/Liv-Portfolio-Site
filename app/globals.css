@@ -171,8 +171,8 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .about-art { position: relative; isolation: isolate; }
 .about-art .headshot { position: relative; z-index: 1; }
 .ap { position: absolute; height: auto; width: auto; pointer-events: none; user-select: none; filter: drop-shadow(0 0.6rem 0.8rem rgba(36, 35, 32, 0.28)); }
-.ap-lace-1 { width: 62%; left: -22%; top: -8%; transform: rotate(-12deg); z-index: 0; }
-.ap-lace-2 { width: 50%; right: -20%; bottom: 14%; transform: rotate(20deg); z-index: 0; }
+.ap-lace-1 { width: 58%; left: -20%; top: -6%; transform: rotate(-8deg); z-index: 0; }
+.ap-lace-2 { width: 34%; right: 6%; bottom: -9%; transform: rotate(8deg); z-index: 0; }
 .ap-ledger { width: 48%; left: -16%; bottom: -6%; transform: rotate(-7deg); z-index: 2; }
 .ap-note { width: 30%; right: -10%; top: -4%; transform: rotate(9deg); z-index: 0; }
 .ap-tape-1 { width: 24%; left: 38%; top: -3.5%; transform: rotate(-4deg); z-index: 3; filter: drop-shadow(0 0.15rem 0.2rem rgba(36, 35, 32, 0.3)); }

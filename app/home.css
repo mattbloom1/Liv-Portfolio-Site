@@ -44,7 +44,7 @@
 .spec-link:hover .pop, .spec-link:focus-visible .pop { opacity: 1; transform: none; }
 .spec-link:focus-visible { outline-offset: 2px; }
 
-.ha > .lace { position: absolute; opacity: 0.85; filter: drop-shadow(0 0.3rem 0.5rem rgba(36, 35, 32, 0.22)); }
+.ha > .lace { position: absolute; opacity: 0.95; filter: drop-shadow(0 0.3rem 0.5rem rgba(36, 35, 32, 0.22)); }
 .lace-1 { left: -5rem; top: 1rem; width: 24rem; transform: rotate(-14deg); }
 .lace-2 { right: -4rem; top: 34rem; width: 26rem; transform: rotate(18deg); }
 .lace-3 { left: -6rem; top: 58rem; width: 22rem; transform: rotate(9deg); }
