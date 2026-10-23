@@ -1,67 +1,90 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
-import Frame from "@/components/Frame";
-import ProjectTile from "@/components/ProjectTile";
-import { introLine, projects } from "@/lib/projects";
+import { asset } from "@/lib/assets";
+import { contact, introLine, projects } from "@/lib/projects";
+import "./home.css";
+
+const bySlug = (slug: string) => projects.find((p) => p.slug === slug)!;
+const scrap = (n: number) => asset(`/collage/scrap/bt${n}.webp`);
+
+/** Decorative paper piece: empty alt, hidden from assistive tech. */
+const Piece = ({ src, className }: { src: string; className: string }) => (
+  <img className={`pc ${className}`} src={src} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+);
 
 export default function Home() {
-  const bySlug = (slug: string) => projects.find((p) => p.slug === slug)!;
-  const hero = bySlug("strapless-dress");
+  const endure = bySlug("endure");
+  const strapless = bySlug("strapless-dress");
+  const marant = bySlug("isabel-marant");
   return (
-    <>
-      <section className="hero dark botanical">
-        <div className="hero-copy reveal">
-          <p className="eyebrow">Fashion · Research · Concept</p>
-          <h1>
-            <span className="h1-script">Liv Polani&rsquo;s</span>
-            <span className="h1-main">Fashion Portfolio</span>
+    <div className="ha" style={{ "--sepia-fox": `url("${asset("/collage/bg/sepia-32.webp")}")` } as CSSProperties}>
+      <section className="ha-desk" aria-labelledby="ha-title">
+        <div className="ha-stage">
+          <Piece src={scrap(29)} className="pc-math" />
+          <Piece src={scrap(6)} className="pc-burnt" />
+          <Piece src={scrap(5)} className="pc-ledger" />
+          <Piece src={scrap(31)} className="pc-note" />
+
+          <h1 id="ha-title" className="ha-title">
+            <span className="ha-first">Liv</span>{" "}
+            <span className="ha-last">Polani</span>
+            <span className="ha-sub">Fashion portfolio</span>
           </h1>
-          <Link href="/projects/" className="btn btn-light">View projects</Link>
-        </div>
-        <div className="collage">
-          <div className="panel" aria-hidden="true" />
-          <Frame className="c-main reveal" src={hero.cover.src} alt={hero.cover.alt} ratio="4 / 5" index={hero.title} priority />
-          <Frame className="c-a reveal" decorative src={bySlug("isabel-marant").cover.src} alt="" ratio="1 / 1" tone="rose" />
-          <Frame className="c-b reveal" decorative src={bySlug("endure").cover.src} alt="" ratio="3 / 4" tone="midnight" />
+          <Link href="/projects/" className="btn ha-cta">View projects</Link>
+
+          <figure className="spec spec-liv fx-shadow">
+            <img src={asset("/about/liv.webp")} alt="Liv Polani resting her chin on her hand" loading="eager" decoding="async" />
+            <Piece src={scrap(3)} className="tape tape-liv" />
+          </figure>
+          <figure className="spec spec-a fx-shadow">
+            <img src={asset(endure.cover.src)} alt={endure.cover.alt} loading="eager" decoding="async" />
+            <Piece src={scrap(20)} className="tape tape-a" />
+            <figcaption>Plate 01</figcaption>
+          </figure>
+          <figure className="spec spec-b fx-shadow">
+            <img src={asset(strapless.cover.src)} alt={strapless.cover.alt} loading="lazy" decoding="async" />
+            <Piece src={scrap(22)} className="tape tape-b" />
+            <figcaption>Plate 02</figcaption>
+          </figure>
+          <figure className="spec spec-c fx-shadow">
+            <img src={asset(marant.cover.src)} alt={marant.cover.alt} loading="lazy" decoding="async" />
+            <Piece src={scrap(2)} className="tape tape-c" />
+            <figcaption>Plate 03</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section className="section paper intro">
-        <p className="lede big">{introLine}</p>
-        <nav className="contents" aria-label="Selected projects">
-          <h2 className="eyebrow">Contents</h2>
-          <ol>
-            {projects.map((p, i) => (
-              <li key={p.slug}>
-                <Link href={`/projects/${p.slug}/`}>
-                  <span className="idx">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="t">{p.title}</span>
-                </Link>
-              </li>
-            ))}
-          </ol>
-          <Link href="/about/" className="link-rule">About Liv</Link>
-        </nav>
-      </section>
-
-      <span className="rule" aria-hidden="true" />
-
-      <section className="section paper selected">
-        <div className="section-head">
-          <h2>Selected projects</h2>
-          <Link href="/projects/" className="link-rule">All projects</Link>
+      <section className="ha-index" aria-labelledby="ha-index-h">
+        <div className="ha-index-head">
+          <h2 id="ha-index-h" className="eyebrow">Register of work</h2>
+          <p className="ha-intro">{introLine}</p>
         </div>
-        <div className="row">
-          {projects.slice(0, 3).map((p, i) => (
-            <ProjectTile key={p.slug} project={p} number={i + 1} />
+        <ol className="ha-ledger">
+          {projects.map((p, i) => (
+            <li key={p.slug}>
+              <Link href={`/projects/${p.slug}/`}>
+                <span className="n">{String(i + 1).padStart(2, "0")}</span>
+                <span className="t">{p.title}</span>
+                <span className="k">{p.category ?? "Collection"}</span>
+                <img className="peek" src={asset(p.cover.src)} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              </Link>
+            </li>
           ))}
-        </div>
+        </ol>
+        <Piece src={scrap(23)} className="pc-margin" />
       </section>
 
-      <section className="section dark invite pale">
-        <span className="rule rule-gold" aria-hidden="true" />
-        <h2>Let&rsquo;s make something.</h2>
-        <Link href="/contact/" className="btn btn-light">Get in touch</Link>
+      <section className="ha-slip" aria-labelledby="ha-slip-h">
+        <div className="slip fx-shadow">
+          <Piece src={scrap(3)} className="tape tape-slip" />
+          <h2 id="ha-slip-h" className="eyebrow">Correspondence</h2>
+          <a className="ha-mail" href={`mailto:${contact.email}`}>{contact.email}</a>
+          <p className="ha-links">
+            <a href={contact.linkedin} rel="noopener noreferrer" target="_blank">LinkedIn</a>
+            <a href={contact.instagram} rel="noopener noreferrer" target="_blank">Instagram</a>
+          </p>
+        </div>
       </section>
-    </>
+    </div>
   );
 }
