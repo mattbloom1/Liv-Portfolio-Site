@@ -13,7 +13,8 @@ export default function InkName({ text, className }: { text: string; className?:
     const clear = () => letters().forEach((el) => (el.dataset.b = "0"));
     let frame = 0;
     const move = (e: PointerEvent) => {
-      if (e.pointerType === "touch" || reduce.matches) return;
+      if (e.pointerType === "touch") return;
+      if (reduce.matches) return clear();
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         letters().forEach((el) => {
