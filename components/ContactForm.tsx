@@ -54,7 +54,9 @@ export default function ContactForm() {
     <div className="field">
       <label htmlFor={id}>{label}</label>
       {id === "message" ? (
-        <textarea id={id} name={id} rows={6} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? `${id}-err` : undefined} />
+        <div className="lace-box">
+          <textarea id={id} name={id} rows={8} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? `${id}-err` : undefined} />
+        </div>
       ) : (
         <input id={id} name={id} type={type} autoComplete={id} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? `${id}-err` : undefined} />
       )}

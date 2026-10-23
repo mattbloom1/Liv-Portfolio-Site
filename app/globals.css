@@ -194,6 +194,15 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .error { color: var(--color-oxblood); font-size: 0.875rem; font-weight: 500; }
 .error::before { content: "Error: "; }
 .notice { border-left: 3px double var(--color-oxblood); padding-left: var(--space-4); }
+/* Message field: ivory paper to write on, set in an oxblood ground trimmed with fine lace top and bottom */
+.lace-box { position: relative; padding: 3.6rem 1.25rem; background: var(--color-oxblood); box-shadow: 0 0.6rem 1.4rem rgba(36, 35, 32, 0.22); }
+.lace-box::before, .lace-box::after { content: ""; position: absolute; left: 0; right: 0; height: 3.1rem; background: var(--t-lace) left center / auto 100% repeat-x; pointer-events: none; }
+.lace-box::before { top: 0.35rem; }
+.lace-box::after { bottom: 0.35rem; transform: scaleY(-1); }
+.lace-box:focus-within { outline: 2px solid var(--color-oxblood); outline-offset: 4px; box-shadow: 0 0 0 5px var(--color-parchment), 0 0.6rem 1.4rem rgba(36, 35, 32, 0.22); }
+.lace-box:has([aria-invalid="true"]) { outline: 2px dashed var(--color-oxblood); outline-offset: 4px; }
+.lace-box textarea { display: block; width: 100%; resize: vertical; min-height: 11rem; background: var(--color-white) var(--t-paper); background-blend-mode: multiply; line-height: 1.7; }
+.lace-box textarea:focus-visible { outline: none; box-shadow: none; }
 .contact-form .btn { justify-self: start; }
 @media (max-width: 800px) { .contact { grid-template-columns: 1fr; gap: var(--space-12); } }
 
