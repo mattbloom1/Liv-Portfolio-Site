@@ -4,7 +4,8 @@ import ProjectTile from "@/components/ProjectTile";
 import { introLine, projects } from "@/lib/projects";
 
 export default function Home() {
-  const hero = projects[1];
+  const bySlug = (slug: string) => projects.find((p) => p.slug === slug)!;
+  const hero = bySlug("strapless-dress");
   return (
     <>
       <section className="hero dark botanical">
@@ -19,8 +20,8 @@ export default function Home() {
         <div className="collage">
           <div className="panel" aria-hidden="true" />
           <Frame className="c-main reveal" src={hero.cover.src} alt={hero.cover.alt} ratio="4 / 5" index={hero.title} priority />
-          <Frame className="c-a reveal" decorative src={projects[2].cover.src} alt="" ratio="1 / 1" tone="rose" />
-          <Frame className="c-b reveal" decorative src={projects[0].cover.src} alt="" ratio="3 / 4" tone="midnight" />
+          <Frame className="c-a reveal" decorative src={bySlug("isabel-marant").cover.src} alt="" ratio="1 / 1" tone="rose" />
+          <Frame className="c-b reveal" decorative src={bySlug("endure").cover.src} alt="" ratio="3 / 4" tone="midnight" />
         </div>
       </section>
 
