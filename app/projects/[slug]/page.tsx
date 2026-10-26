@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CanvaEmbed from "@/components/CanvaEmbed";
 import Frame from "@/components/Frame";
 import { projects } from "@/lib/projects";
 
@@ -45,22 +46,31 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         )}
       </header>
 
-      <Frame className="opening" src={project.cover.src} alt={project.cover.alt} ratio={project.cover.ratio} index="Plate 01" priority />
+      {project.canva ? (
+        <>
+          <CanvaEmbed design={project.canva.design} ratio={project.canva.ratio} title={project.title} />
+          {project.description && <p className="lede description">{project.description}</p>}
+        </>
+      ) : (
+        <>
+          <Frame className="opening" src={project.cover.src} alt={project.cover.alt} ratio={project.cover.ratio} index="Plate 01" priority />
 
-      {project.description && <p className="lede description">{project.description}</p>}
+          {project.description && <p className="lede description">{project.description}</p>}
 
-      <div className="sequence">
-        {project.images.map((image, n) => (
-          <Frame
-            key={n}
-            className={`s-${n % 4} ${isPortrait(image.ratio) ? "portrait" : ""}`}
-            src={image.src}
-            alt={image.alt}
-            ratio={image.ratio}
-            index={`Plate ${String(n + 2).padStart(2, "0")}`}
-          />
-        ))}
-      </div>
+          <div className="sequence">
+            {project.images.map((image, n) => (
+              <Frame
+                key={n}
+                className={`s-${n % 4} ${isPortrait(image.ratio) ? "portrait" : ""}`}
+                src={image.src}
+                alt={image.alt}
+                ratio={image.ratio}
+                index={`Plate ${String(n + 2).padStart(2, "0")}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
 
       {project.credits && <p className="small credits">Credits: {project.credits}</p>}
 
