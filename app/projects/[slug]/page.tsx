@@ -8,11 +8,6 @@ type Params = { slug: string };
 
 const plate = (n: number) => `Plate ${String(n).padStart(2, "0")}`;
 
-const isPortrait = (ratio: string) => {
-  const [w, h] = ratio.split("/").map(Number);
-  return h > w;
-};
-
 export const dynamicParams = false;
 export const generateStaticParams = () => projects.map(({ slug }) => ({ slug }));
 
@@ -55,7 +50,6 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         {project.images.map((image, n) => (
           <Frame
             key={n}
-            className={`s-${n % 4} ${isPortrait(image.ratio) ? "portrait" : ""}`}
             src={image.src}
             alt={image.alt}
             ratio={image.ratio}
