@@ -1,4 +1,8 @@
 {
+ "/about/liv.webp": [
+  800,
+  800
+ ],
  "/projects/endure/03.webp": [
   1600,
   1258
@@ -79,6 +83,14 @@
   1600,
   1258
  ],
+ "/projects/isabel-marant/09.webp": [
+  1600,
+  1258
+ ],
+ "/projects/knitwear-technique/02.webp": [
+  1600,
+  1164
+ ],
  "/projects/knitwear-technique/03.webp": [
   1600,
   1164
@@ -123,11 +135,35 @@
   1600,
   1164
  ],
+ "/projects/mali-blouse-tech-pack/01.webp": [
+  1600,
+  1153
+ ],
+ "/projects/mali-blouse-tech-pack/02.webp": [
+  813,
+  2014
+ ],
+ "/projects/mali-blouse-tech-pack/03.webp": [
+  1267,
+  2400
+ ],
+ "/projects/mali-blouse-tech-pack/04.webp": [
+  1367,
+  2400
+ ],
+ "/projects/mali-blouse-tech-pack/05.webp": [
+  1600,
+  1854
+ ],
+ "/projects/mali-blouse-tech-pack/06.webp": [
+  1600,
+  1367
+ ],
  "/projects/strapless-dress/01.webp": [
   1600,
   1237
  ],
- "/projects/strapless-dress/03.webp": [
+ "/projects/strapless-dress/02.webp": [
   1600,
   1237
  ],
@@ -148,6 +184,14 @@
   1237
  ],
  "/projects/strapless-dress/08.webp": [
+  1600,
+  1237
+ ],
+ "/projects/strapless-dress/09.webp": [
+  1600,
+  1237
+ ],
+ "/projects/strapless-dress/11.webp": [
   1600,
   1237
  ],
@@ -186,9 +230,5 @@
  "/projects/the-sweat-set/cover.webp": [
   1920,
   1080
- ],
- "/about/liv.webp": [
-  800,
-  800
  ]
 }

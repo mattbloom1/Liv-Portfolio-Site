@@ -10,7 +10,7 @@ A foxed paper table. Scanned ledger and notebook scraps, tape and white-border p
 - The hero is a fixed 16:10 stage scaled with container query units, so the collage keeps its composition at every desktop width. Below 800px the stage becomes a simple two-column stack of plates and the loose scraps are hidden.
 - Plates 01 to 03 are links to their projects. Hover or keyboard focus tilts the plate a few degrees further and slides up a caption (title and category) over the lower edge of the cover. Touch devices (no hover) show the caption permanently; reduced motion keeps the caption but drops the tilt and transitions.
 - Ink bleed listens on the whole document, not just the name, with a reach of about two letter-heights, so it starts before the pointer touches the text.
-- Plates 01 to 03 show the Endure, Strapless Dress and Isabel Marant covers. The portrait is `public/about/liv.webp`.
+- Plates 01 to 03 show the Endure, Distorted Bloom (strapless dress) and Desert Wildflower (Isabel Marant) covers. The portrait is `public/about/liv.webp`.
 - Copy comes from `lib/projects.ts` (intro line, titles, categories, contact). "Plate 01" and "Register of work" are structural labels; change or drop them if Liv prefers.
 
 ## Header and footer (site-wide)
