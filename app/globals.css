@@ -153,19 +153,16 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .project { display: grid; gap: var(--space-12); }
 .meta { display: flex; gap: var(--space-8); flex-wrap: wrap; margin-top: var(--space-6); }
 .meta dt { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-oxblood); }
-.sequence { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-12) var(--space-8); align-items: start; }
-.s-0 { grid-column: 1 / span 9; }
-.s-1 { grid-column: 4 / span 9; }
-.s-2 { grid-column: 1 / span 12; }
-.s-3 { grid-column: 2 / span 10; }
-/* Tall pages (spec sheets) stay readable without filling several screens */
-.sequence .portrait { width: min(100%, 36rem); }
-.sequence .s-1.portrait { justify-self: end; }
-.sequence .s-2.portrait, .sequence .s-3.portrait { justify-self: center; }
+/* Same rhythm as the Projects page: one column of plates, alternating left and right; the cover starts on the left */
+.project .opening { width: min(100%, 44rem); justify-self: start; }
+.sequence { display: grid; gap: var(--space-16); }
+.sequence .frame { width: min(100%, 44rem); }
+.sequence .frame:nth-child(odd) { justify-self: end; }
+.sequence .frame:nth-child(even) { justify-self: start; }
 .pager { display: flex; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; padding-top: var(--space-6); border-top: 3px double var(--color-oxblood); }
 .pager a { padding: var(--space-3) 0; min-height: 44px; }
 .pager a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
-@media (max-width: 800px) { .s-0, .s-1, .s-2, .s-3 { grid-column: 1 / -1; margin-top: 0; } }
+@media (max-width: 800px) { .sequence { gap: var(--space-12); } .project .opening, .sequence .frame { width: 100%; } }
 
 /* About */
 .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-16); margin-top: var(--space-12); align-items: start; }
