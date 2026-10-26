@@ -1,6 +1,6 @@
 # Liv Polani — Portfolio
 
-Next.js static export deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to the default branch (`claude/project-thread-etpylc`).
+Live at https://livpolani.com. Next.js static export deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to the default branch (`claude/project-thread-etpylc`).
 
 ```bash
 npm install
