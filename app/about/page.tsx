@@ -29,6 +29,12 @@ export default function About() {
           <Link href="/contact/" className="link-rule">Get in touch</Link>
         </div>
       </div>
+
+      <div className="resume">
+        <h2>Résumé</h2>
+        <Frame src="/resume/liv-polani-resume.webp" alt="Liv Polani's résumé: education, experience, activities and technical skills" ratio="1600 / 2071" />
+        <a href={asset("/resume/liv-polani-resume.pdf")} className="link-rule" download>Download PDF</a>
+      </div>
     </section>
   );
 }

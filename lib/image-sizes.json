@@ -43,6 +43,14 @@
   1600,
   1258
  ],
+ "/projects/endure/13.webp": [
+  1600,
+  1258
+ ],
+ "/projects/endure/14.webp": [
+  1600,
+  1258
+ ],
  "/projects/endure/15.webp": [
   1600,
   1258
@@ -95,7 +103,7 @@
   1600,
   1164
  ],
- "/projects/knitwear-technique/04.webp": [
+ "/projects/knitwear-technique/05.webp": [
   1600,
   1164
  ],
@@ -103,31 +111,39 @@
   1600,
   1164
  ],
- "/projects/knitwear-technique/08.webp": [
+ "/projects/knitwear-technique/07.webp": [
   1600,
   1164
  ],
- "/projects/knitwear-technique/10.webp": [
+ "/projects/knitwear-technique/09.webp": [
   1600,
   1164
  ],
- "/projects/knitwear-technique/12.webp": [
+ "/projects/knitwear-technique/11.webp": [
   1600,
   1164
  ],
- "/projects/knitwear-technique/16.webp": [
+ "/projects/knitwear-technique/13.webp": [
   1600,
   1164
  ],
- "/projects/knitwear-technique/20.webp": [
+ "/projects/knitwear-technique/15.webp": [
   1600,
   1164
  ],
- "/projects/knitwear-technique/22.webp": [
+ "/projects/knitwear-technique/17.webp": [
   1600,
   1164
  ],
- "/projects/knitwear-technique/24.webp": [
+ "/projects/knitwear-technique/19.webp": [
+  1600,
+  1164
+ ],
+ "/projects/knitwear-technique/21.webp": [
+  1600,
+  1164
+ ],
+ "/projects/knitwear-technique/23.webp": [
   1600,
   1164
  ],
@@ -158,6 +174,14 @@
  "/projects/mali-blouse-tech-pack/06.webp": [
   1600,
   1367
+ ],
+ "/projects/soft-structure/01.webp": [
+  2400,
+  1801
+ ],
+ "/projects/soft-structure/02.webp": [
+  2400,
+  1801
  ],
  "/projects/strapless-dress/01.webp": [
   1600,
@@ -191,9 +215,9 @@
   1600,
   1237
  ],
- "/projects/strapless-dress/11.webp": [
+ "/projects/the-sweat-set/01.webp": [
   1600,
-  1237
+  900
  ],
  "/projects/the-sweat-set/02.webp": [
   1600,
@@ -203,11 +227,27 @@
   1600,
   900
  ],
+ "/projects/the-sweat-set/04.webp": [
+  1600,
+  900
+ ],
  "/projects/the-sweat-set/05.webp": [
   1600,
   900
  ],
  "/projects/the-sweat-set/06.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/07.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/08.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/09.webp": [
   1600,
   900
  ],
@@ -223,12 +263,36 @@
   1600,
   900
  ],
+ "/projects/the-sweat-set/13.webp": [
+  1600,
+  900
+ ],
  "/projects/the-sweat-set/14.webp": [
   1600,
   900
  ],
- "/projects/the-sweat-set/cover.webp": [
-  1920,
-  1080
+ "/projects/the-sweat-set/15.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/16.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/17.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/18.webp": [
+  1600,
+  900
+ ],
+ "/projects/the-sweat-set/19.webp": [
+  1600,
+  900
+ ],
+ "/resume/liv-polani-resume.webp": [
+  1600,
+  2071
  ]
 }

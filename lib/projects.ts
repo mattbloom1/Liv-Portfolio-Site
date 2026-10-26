@@ -18,8 +18,6 @@ export type Project = {
   category?: string;
   role?: string;
   credits?: string;
-  /** Canva "Embed" share; when set, each plate on the project page is a live embed of one page. */
-  canva?: { design: string; ratio: string; pages: number };
 };
 
 const img = (slug: string, file: string, alt: string): Img => {
@@ -35,7 +33,6 @@ export const projects: Project[] = [
   {
     title: "Endure",
     slug: "endure",
-    canva: { design: "DAHS80ffgVs/lejtuiogrhS9UHDM8wEC-A", ratio: "14 / 11", pages: 14 },
     cover: img("endure", "03", "Black-and-white portrait with a scorpion across the face, the cover of the Endure collection"),
     images: set("endure", [
       ["04", "Collage moodboard of torn paper, portraits and typography"],
@@ -47,6 +44,8 @@ export const projects: Project[] = [
       ["10", "Nightsea Crossing look: illustration and technical flat"],
       ["11", "Model wearing a red chiffon cape"],
       ["12", "Technical flats for the collection"],
+      ["13", "Technical flats in boiled wool, chiffon and nylon spandex"],
+      ["14", "Technical flats in velvet, leather and jersey"],
       ["15", "Process photographs from the studio"],
       ["16", "Models wearing the finished collection"],
     ]),
@@ -54,7 +53,7 @@ export const projects: Project[] = [
   {
     title: "Distorted Bloom",
     slug: "strapless-dress",
-    category: "Strapless dress",
+    category: "Collection",
     cover: img("strapless-dress", "02", "Collage of a woman's face, pressed flowers and soft pink petals"),
     description:
       "These designs explore the tension between control and release, combining a structured corset with an asymmetrically draped skirt. Inspired by fragile floral forms and surreal distortion, the piece contrasts precision with organic movement, expressing a femininity that is both composed and unstable.",
@@ -66,13 +65,12 @@ export const projects: Project[] = [
       ["07", "Pink corset and ruffled high-low skirt illustration with technical flats"],
       ["08", "Black corset with draped pink peplum and wide trousers, with technical flats"],
       ["09", "Back and front views of the finished black dress"],
-      ["11", "Pencil sketches of the strapless looks"],
     ]),
   },
   {
     title: "Desert Wildflower",
     slug: "isabel-marant",
-    category: "Isabel Marant",
+    category: "Collection",
     cover: img("isabel-marant", "02", "Collage of a California street sign, a motorcycle and white lace"),
     images: set("isabel-marant", [
       ["01", "Title page: Desert Wildflower"],
@@ -86,41 +84,6 @@ export const projects: Project[] = [
     ]),
   },
   {
-    title: "Knitwear Technique Binder",
-    slug: "knitwear-technique",
-    category: "Technique portfolio",
-    cover: img("knitwear-technique", "02", "Title Knitwear Technique Binder over close-up orange and blue knit texture"),
-    images: set("knitwear-technique", [
-      ["03", "Inspiration board collage of knitwear, citrus and blue textiles"],
-      ["04", "Swatch 1: stockinette with stripes"],
-      ["06", "Swatch 2: gauge swatch"],
-      ["08", "Swatch 3: edge shaping"],
-      ["10", "Swatch 4: fully fashioned shaping"],
-      ["12", "Swatch 5: lace design"],
-      ["16", "Swatch 7: Fair Isle design"],
-      ["20", "Swatch 9: mock rib edge"],
-      ["22", "Swatch 10: cable knit"],
-      ["24", "Half-scale sweater"],
-      ["25", "Half-scale sweater pattern and charts"],
-    ]),
-  },
-  {
-    title: "The Sweat Set",
-    slug: "the-sweat-set",
-    category: "Merchandise development",
-    cover: img("the-sweat-set", "cover", "Title slide: University Merchandise Innovation, The Sweat Set"),
-    images: set("the-sweat-set", [
-      ["02", "Market research slide with the University of Delaware store"],
-      ["03", "Pricing research slide"],
-      ["05", "Product selection: a grey sweatshirt and sweatpants set"],
-      ["06", "Target user slide"],
-      ["10", "Line sheet, front view"],
-      ["11", "Line sheet, back view"],
-      ["12", "Bill of materials"],
-      ["14", "Business plan overview"],
-    ]),
-  },
-  {
     title: "Mali Blouse Tech Pack",
     slug: "mali-blouse-tech-pack",
     category: "Tech pack",
@@ -131,6 +94,62 @@ export const projects: Project[] = [
       ["04", "Construction sheet: seams, bindings, topstitching, hems and label placement"],
       ["05", "Grading sheet from XXS to XXL"],
       ["06", "Costing sheet for materials, trims, labels and labour"],
+    ]),
+  },
+  {
+    title: "Soft Structure",
+    slug: "soft-structure",
+    category: "Product line",
+    cover: img("soft-structure", "01", "Softness structured for the office: illustrated shirt, trousers and knit dresses with prices, a silk headscarf, colour swatches and a showroom"),
+    images: set("soft-structure", [
+      ["02", "Branding strategy, target customer, distribution channel, competitive advantage and AATCC testing notes"],
+    ]),
+  },
+  {
+    title: "Knitwear Technique Binder",
+    slug: "knitwear-technique",
+    category: "Technique portfolio",
+    cover: img("knitwear-technique", "02", "Title Knitwear Technique Binder over close-up orange and blue knit texture"),
+    images: set("knitwear-technique", [
+      ["03", "Inspiration board collage of knitwear, citrus and blue textiles"],
+      ["05", "Swatch 1: stockinette with stripes, yarn and machine details"],
+      ["06", "Swatch 2 inspiration collage: gauge"],
+      ["07", "Swatch 2: gauge swatch with yarn and tension details"],
+      ["09", "Swatch 3: edge shaping with knitting chart"],
+      ["11", "Swatch 4: fully fashioned shaping with knitting chart"],
+      ["13", "Swatch 5: lace design with illustrated look and chart"],
+      ["15", "Swatch 6: short rows with illustrated look and chart"],
+      ["17", "Swatch 7: Fair Isle design with illustrated look and chart"],
+      ["19", "Swatch 8: colour with tucks, illustrated look and chart"],
+      ["21", "Swatch 9: mock rib edge"],
+      ["23", "Swatch 10: cable knit with illustrated look"],
+      ["25", "Half-scale sweater pattern and charts"],
+    ]),
+  },
+  {
+    title: "The Sweat Set",
+    slug: "the-sweat-set",
+    category: "Merchandise development",
+    cover: img("the-sweat-set", "01", "Title slide: University Merchandise Innovation, The Sweat Set"),
+    images: set("the-sweat-set", [
+      ["02", "Market research slide with the University of Delaware store"],
+      ["03", "Pricing and style research"],
+      ["04", "Market opportunity in women's apparel"],
+      ["05", "Product selection: a grey sweatshirt and sweatpants set"],
+      ["06", "Target user: University of Delaware women aged 18 to 24"],
+      ["07", "User research survey and results chart"],
+      ["08", "User responses"],
+      ["09", "Design ideation and user feedback"],
+      ["10", "Line sheet with construction details"],
+      ["11", "Line sheet with style information and pricing"],
+      ["12", "Bill of materials"],
+      ["13", "Bill of materials, continued"],
+      ["14", "Business plan: target audience, key features and appeal"],
+      ["15", "Business plan: manufacturing"],
+      ["16", "Business plan: promotion and advertising"],
+      ["17", "Business plan: quality control"],
+      ["18", "Business plan: pricing"],
+      ["19", "Sources"],
     ]),
   },
 ];
