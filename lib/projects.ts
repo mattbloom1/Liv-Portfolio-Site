@@ -18,6 +18,8 @@ export type Project = {
   category?: string;
   role?: string;
   credits?: string;
+  /** Canva "Embed" share; when set, each plate on the project page is a live embed of one page. */
+  canva?: { design: string; ratio: string; pages: number };
 };
 
 const img = (slug: string, file: string, alt: string): Img => {
@@ -33,6 +35,7 @@ export const projects: Project[] = [
   {
     title: "Endure",
     slug: "endure",
+    canva: { design: "DAHS80ffgVs/lejtuiogrhS9UHDM8wEC-A", ratio: "14 / 11", pages: 14 },
     cover: img("endure", "03", "Black-and-white portrait with a scorpion across the face, the cover of the Endure collection"),
     images: set("endure", [
       ["04", "Collage moodboard of torn paper, portraits and typography"],

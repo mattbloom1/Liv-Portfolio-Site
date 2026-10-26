@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CanvaEmbed from "@/components/CanvaEmbed";
 import Frame from "@/components/Frame";
 import { projects } from "@/lib/projects";
 
 type Params = { slug: string };
+
+const plate = (n: number) => `Plate ${String(n).padStart(2, "0")}`;
 
 const isPortrait = (ratio: string) => {
   const [w, h] = ratio.split("/").map(Number);
@@ -24,6 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   const i = projects.findIndex((p) => p.slug === slug);
   if (i < 0) notFound();
   const project = projects[i];
+  const { canva } = project;
   const prev = projects[(i + projects.length - 1) % projects.length];
   const next = projects[(i + 1) % projects.length];
   const meta = [
@@ -45,21 +49,37 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         )}
       </header>
 
-      <Frame className="opening" src={project.cover.src} alt={project.cover.alt} ratio={project.cover.ratio} index="Plate 01" priority />
+      {canva ? (
+        <CanvaEmbed className="opening" design={canva.design} page={1} ratio={canva.ratio} title={`${project.title}, page 1`} index={plate(1)} />
+      ) : (
+        <Frame className="opening" src={project.cover.src} alt={project.cover.alt} ratio={project.cover.ratio} index={plate(1)} priority />
+      )}
 
       {project.description && <p className="lede description">{project.description}</p>}
 
       <div className="sequence">
-        {project.images.map((image, n) => (
-          <Frame
-            key={n}
-            className={`s-${n % 4} ${isPortrait(image.ratio) ? "portrait" : ""}`}
-            src={image.src}
-            alt={image.alt}
-            ratio={image.ratio}
-            index={`Plate ${String(n + 2).padStart(2, "0")}`}
-          />
-        ))}
+        {canva
+          ? Array.from({ length: canva.pages - 1 }, (_, n) => (
+              <CanvaEmbed
+                key={n}
+                className={`s-${n % 4}`}
+                design={canva.design}
+                page={n + 2}
+                ratio={canva.ratio}
+                title={`${project.title}, page ${n + 2}`}
+                index={plate(n + 2)}
+              />
+            ))
+          : project.images.map((image, n) => (
+              <Frame
+                key={n}
+                className={`s-${n % 4} ${isPortrait(image.ratio) ? "portrait" : ""}`}
+                src={image.src}
+                alt={image.alt}
+                ratio={image.ratio}
+                index={plate(n + 2)}
+              />
+            ))}
       </div>
 
       {project.credits && <p className="small credits">Credits: {project.credits}</p>}
