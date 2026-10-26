@@ -26,6 +26,10 @@ jobs:
       - run: npm ci
       - uses: actions/configure-pages@v5
       - run: npm run build
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+      - if: vars.CUSTOM_DOMAIN != ''
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > out/CNAME
       - run: npm run typecheck
       - uses: actions/upload-pages-artifact@v3
         with:
