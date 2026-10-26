@@ -33,6 +33,8 @@ Repo → **Settings** → **Secrets and variables** → **Actions** → **Variab
 - Name: `CUSTOM_DOMAIN`
 - Value: `yourdomain.com` (no `https://`, no `www`)
 
+The workflow already defaults to `livpolani.com`, so this is only needed to use a different domain.
+
 This makes the build serve from the domain root instead of `/Liv-Portfolio-Site` and writes the `CNAME` file. No code change needed.
 
 ## 4. Turn it on in GitHub Pages
