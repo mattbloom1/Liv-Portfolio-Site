@@ -141,7 +141,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .tile-title { font-size: 1.5rem; line-height: 1.2; letter-spacing: 0; }
 .tile:hover .tile-title, .tile:focus-visible .tile-title { text-decoration: underline; text-underline-offset: 0.25em; }
 
-/* Projects gallery: one column, covers alternate left and right at a shared aspect ratio */
+/* Projects gallery: one column, covers alternate left and right, each at its own title card's shape so nothing is cropped */
 .gallery { display: grid; gap: var(--space-16); margin-top: var(--space-12); }
 .gallery .tile { width: min(100%, 44rem); }
 .gallery .tile:nth-child(odd) { justify-self: start; }

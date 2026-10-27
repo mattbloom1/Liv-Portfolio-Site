@@ -54,11 +54,11 @@ export const projects: Project[] = [
     title: "Distorted Bloom",
     slug: "strapless-dress",
     category: "Collection",
-    cover: img("strapless-dress", "02", "Collage of a woman's face, pressed flowers and soft pink petals"),
+    cover: img("strapless-dress", "01", "Title page: Distorted Bloom over a blurred pink flower"),
     description:
       "These designs explore the tension between control and release, combining a structured corset with an asymmetrically draped skirt. Inspired by fragile floral forms and surreal distortion, the piece contrasts precision with organic movement, expressing a femininity that is both composed and unstable.",
     images: set("strapless-dress", [
-      ["01", "Title page: Distorted Bloom over a blurred pink flower"],
+      ["02", "Collage of a woman's face, pressed flowers and soft pink petals"],
       ["04", "Fabric palette in flower-shaped swatches: taffeta, chiffon, suiting and silk"],
       ["05", "Three illustrated strapless looks"],
       ["06", "Black strapless gown illustration with front and back technical flats"],
@@ -71,9 +71,9 @@ export const projects: Project[] = [
     title: "Desert Wildflower",
     slug: "isabel-marant",
     category: "Collection",
-    cover: img("isabel-marant", "02", "Collage of a California street sign, a motorcycle and white lace"),
+    cover: img("isabel-marant", "01", "Title page: Desert Wildflower"),
     images: set("isabel-marant", [
-      ["01", "Title page: Desert Wildflower"],
+      ["02", "Collage of a California street sign, a motorcycle and white lace"],
       ["03", "Muse board: photographs and written profile"],
       ["04", "Fabrics and colour palette"],
       ["05", "Illustrated looks with fabric swatches"],
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     title: "Mali Blouse Tech Pack",
     slug: "mali-blouse-tech-pack",
     category: "Tech pack",
-    cover: img("mali-blouse-tech-pack", "01", "Style sheet for the Ralph Lauren Mali Blouse with front and back flat sketches"),
+    cover: img("mali-blouse-tech-pack", "01", "Style sheet for the Mali Blouse with front and back flat sketches"),
     images: set("mali-blouse-tech-pack", [
       ["02", "Bill of materials: fabric, lace, thread, labels and ribbon with swatches and suppliers"],
       ["03", "Spec sheet with measurement points and tolerances"],
