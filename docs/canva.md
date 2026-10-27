@@ -10,6 +10,8 @@ Project images are exported from Liv's Canva designs (via the Canva connector, P
 | Soft Structure | `DAHEahiG3FU` | 1–2 |
 | Knitwear Technique Binder | `DAGTGR2lEZY` | 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25 (6 hidden since) |
 | The Sweat Set | `DAHPkniAGMA` | 1–19 |
-| Résumé (About page) | `DAHBmzVpfSs` | 1, also served as `public/resume/liv-polani-resume.pdf` |
+| Résumé (About page) | `DAHBmzVpfSs` | Embedded live (`CanvaEmbed`), so Canva edits show up without a deploy |
 
 The Mali Blouse tech pack comes from Liv's spreadsheet (`Tech_Pack_3.xltx`), one image per sheet. `lib/image-sizes.json` holds every image's pixel size and must be regenerated when images change.
+
+`components/CanvaEmbed.tsx` shows a Canva page live with no Canva controls: the iframe is 120px taller above and below its frame so the toolbar falls in a clipped strip, and a cover blocks clicks and hover. This depends on how Canva lays out its embed viewer; recheck it if Canva changes.

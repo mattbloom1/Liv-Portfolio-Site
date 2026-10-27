@@ -182,6 +182,9 @@ h2 { font-size: clamp(2rem, 4vw, 4.5rem); }
 .prose { display: grid; gap: var(--space-6); justify-items: start; max-width: 62ch; }
 .resume { display: grid; gap: var(--space-6); justify-items: start; margin-top: var(--space-16); }
 .resume .frame { width: min(100%, 44rem); box-shadow: 0 2px 12px rgb(0 0 0 / 0.12); }
+/* Live Canva page: iframe 120px taller above and below the frame, so Canva's toolbar sits in the clipped strip */
+.canva-art iframe { position: absolute; left: 0; top: -120px; width: 100%; height: calc(100% + 240px); border: 0; }
+.canva-cover { position: absolute; inset: 0; }
 @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; gap: var(--space-12); } }
 
 /* Contact */

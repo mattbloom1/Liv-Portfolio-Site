@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CanvaEmbed from "@/components/CanvaEmbed";
 import Frame from "@/components/Frame";
 import { asset } from "@/lib/assets";
 import { bio } from "@/lib/projects";
@@ -32,8 +33,7 @@ export default function About() {
 
       <div className="resume">
         <h2>Résumé</h2>
-        <Frame src="/resume/liv-polani-resume.webp" alt="Liv Polani's résumé: education, experience, activities and technical skills" ratio="1600 / 2071" />
-        <a href={asset("/resume/liv-polani-resume.pdf")} className="link-rule" download>Download PDF</a>
+        <CanvaEmbed design="DAHBmzVpfSs/_JIvJPOZP5z4Q3EvfFH_3Q" ratio="17 / 22" title="Liv Polani's résumé" />
       </div>
     </section>
   );
