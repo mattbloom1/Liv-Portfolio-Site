@@ -113,7 +113,6 @@ export const projects: Project[] = [
     images: set("knitwear-technique", [
       ["03", "Inspiration board collage of knitwear, citrus and blue textiles"],
       ["05", "Swatch 1: stockinette with stripes, yarn and machine details"],
-      ["06", "Swatch 2 inspiration collage: gauge"],
       ["07", "Swatch 2: gauge swatch with yarn and tension details"],
       ["09", "Swatch 3: edge shaping with knitting chart"],
       ["11", "Swatch 4: fully fashioned shaping with knitting chart"],

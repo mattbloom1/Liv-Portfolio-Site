@@ -8,7 +8,7 @@ Project images are exported from Liv's Canva designs (via the Canva connector, P
 | Distorted Bloom | `DAHGOawJZTg` | 1, 2, 4–9 (3, 10, 11 hidden) |
 | Desert Wildflower | `DAHIuVotABk` | 1–9 |
 | Soft Structure | `DAHEahiG3FU` | 1–2 |
-| Knitwear Technique Binder | `DAGTGR2lEZY` | 2, 3, 5, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25 |
+| Knitwear Technique Binder | `DAGTGR2lEZY` | 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25 (6 hidden since) |
 | The Sweat Set | `DAHPkniAGMA` | 1–19 |
 | Résumé (About page) | `DAHBmzVpfSs` | 1, also served as `public/resume/liv-polani-resume.pdf` |
 
